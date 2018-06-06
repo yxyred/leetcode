@@ -13,17 +13,16 @@ public class GetLeastNumbers {
     public static void main(String[] args) {
         int[] input = {4,5,1,6,2,7,3,8};
         ArrayList out = new ArrayList();
-        out = new GetLeastNumbers().get_k_leastnumber(input,out,9);
+        out = new GetLeastNumbers().get_k_leastnumber(input,out,10);
         log.info("{}",String.valueOf(out));
     }
     public ArrayList get_k_leastnumber(int[] input, ArrayList res,int k){
-        int length = input.length;
-        if(input == null || length ==0 || length < k ){
-            return null;
+        if(input == null || input.length ==0 || input.length  < k){
+            return res;
         }
         for (int i = 0 ; i < k;i++){
             int tem = input[i] ;
-            int min = 0;
+            int min = i;
             for (int j = i ; j < input.length; j++){
                 if(tem > input [j]){
                     tem = input[j];

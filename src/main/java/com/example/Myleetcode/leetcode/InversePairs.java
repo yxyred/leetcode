@@ -10,5 +10,20 @@ import lombok.extern.slf4j.Slf4j;
 * */
 @Slf4j
 public class InversePairs {
-    
+    public static void main(String[] args){
+        int[] pair = {1,2,3,4,5,6,7,0};
+        int res = new InversePairs().getInverseNum(pair);
+        log.info("{},{}",pair,res);
+    }
+    private int getInverseNum(int[] pair){
+        int res = 0;
+        for(int i = 0 ; i<pair.length-1;i++){
+            for (int j = i+1 ;j < pair.length;j ++){
+               if( pair[i] > pair[j]){
+                    res ++;
+               }
+            }
+        }
+        return res;
+    }
 }

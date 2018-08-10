@@ -1,8 +1,7 @@
-package com.example.Myleetcode.leetcode;
+package com.example.Myleetcode.jianzhioffer;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /*自动售货机里有 N 瓶复制可乐。复制可乐非常神奇，喝了它的人会复制出一个自己来！

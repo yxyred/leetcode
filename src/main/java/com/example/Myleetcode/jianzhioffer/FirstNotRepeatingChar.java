@@ -1,12 +1,9 @@
-package com.example.Myleetcode.leetcode;
+package com.example.Myleetcode.jianzhioffer;
 
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 /*在一个字符串(1<=字符串长度<=10000，
 全部由字母组成)中找到第一个只出现一次的字符,并返回它的位置*/

@@ -1,19 +1,24 @@
-package com.example.Myleetcode.leetcode;
+package com.example.Myleetcode.jianzhioffer;
 
 
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.Stack;
 
 /**
  *
  */
 /*输入两个链表，找出它们的第一个公共结点
 * */
+class ListNode {
+    int val;
+    ListNode next = null;
 
+    ListNode(int val) {
+        this.val = val;
+    }
+}
 
 @Slf4j
-public class FindFirstCommonNode_2 {
+public class FindFirstCommonNode {
     public static void main(String[] args){
         ListNode n1 = new ListNode(1);
         ListNode n2 = new ListNode(2);
@@ -37,21 +42,18 @@ public class FindFirstCommonNode_2 {
         log.info("{}",res.val);
     }
     public ListNode getFindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
-        ListNode p1 = pHead1, p2 = pHead2 ,res = null;
-        Stack<ListNode> L1 = new Stack<ListNode>();
-        Stack<ListNode> L2 = new Stack<ListNode>();
+        ListNode p1 = pHead1, p2 = pHead2 ;
         while(p1 != null ){
-            L1.push(p1);
+
+            while(p2 != null){
+                if (p1.val == p2.val){
+                    return p1;
+                }
+                p2 = p2.next;
+            }
             p1 = p1.next;
+            p2 = pHead2;
         }
-        while(p2 != null ){
-            L2.push(p1);
-            p2 = p2.next;
-        }
-        while (!L1.isEmpty() && !L2.isEmpty() && L2.peek() == L1.peek()){
-            res = L1.pop();
-            L2.pop();
-        }
-        return res;
+        return null;
     }
 }
